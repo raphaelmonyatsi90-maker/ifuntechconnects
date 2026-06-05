@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-tech.jpg";
+import raphaelPhoto from "@/assets/raphael-monyatsi.jpeg.asset.json";
 import { Mail, MapPin, Clock, Phone, Bot, Cpu, Box, Code2, Brain, Sparkles, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -25,7 +26,7 @@ const services = [
 ];
 
 const team = [
-  { name: "Raphael Monyatsi", role: "CEO", bio: "Provides unwavering leadership and strategic direction, overseeing organizational growth and ensuring alignment with our mission and vision." },
+  { name: "Raphael Monyatsi", role: "CEO", bio: "Provides unwavering leadership and strategic direction, overseeing organizational growth and ensuring alignment with our mission and vision.", photo: raphaelPhoto.url },
   { name: "Lesley Seemola", role: "CEO", bio: "Demonstrates remarkable leadership and a visionary approach, guiding the team towards strategic objectives and fostering innovation." },
 ];
 
@@ -168,10 +169,14 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-8">
             {team.map((m) => (
               <div key={m.name} className="p-8 rounded-lg bg-card border border-border">
-                <div className="h-20 w-20 rounded-full bg-[var(--gradient-accent)] flex items-center justify-center text-2xl font-display text-white mb-6"
-                  style={{ background: "var(--gradient-accent)" }}>
-                  {m.name.split(" ").map((n) => n[0]).join("")}
-                </div>
+                {m.photo ? (
+                  <img src={m.photo} alt={m.name} className="h-24 w-24 rounded-full object-cover mb-6 border-2 border-[var(--primary)]/40" />
+                ) : (
+                  <div className="h-20 w-20 rounded-full flex items-center justify-center text-2xl font-display text-white mb-6"
+                    style={{ background: "var(--gradient-accent)" }}>
+                    {m.name.split(" ").map((n) => n[0]).join("")}
+                  </div>
+                )}
                 <h3 className="text-2xl mb-1">{m.name}</h3>
                 <p className="text-[var(--primary)] text-sm uppercase tracking-wider mb-4">{m.role}</p>
                 <p className="text-muted-foreground leading-relaxed">{m.bio}</p>
