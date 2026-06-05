@@ -28,7 +28,7 @@ const services = [
 
 const team = [
   { name: "Raphael Monyatsi", role: "CEO", bio: "Provides unwavering leadership and strategic direction, overseeing organizational growth and ensuring alignment with our mission and vision.", photo: raphaelPhoto.url },
-  { name: "Lesley Seemola", role: "CEO", bio: "Demonstrates remarkable leadership and a visionary approach, guiding the team towards strategic objectives and fostering innovation." },
+  { name: "Lesley Seemola", role: "Manager", bio: "Demonstrates remarkable leadership and a visionary approach, guiding the team towards strategic objectives and fostering innovation.", photo: lesleyPhoto.url },
 ];
 
 function Nav() {
