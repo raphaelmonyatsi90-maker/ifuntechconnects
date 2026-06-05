@@ -169,10 +169,14 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-8">
             {team.map((m) => (
               <div key={m.name} className="p-8 rounded-lg bg-card border border-border">
-                <div className="h-20 w-20 rounded-full bg-[var(--gradient-accent)] flex items-center justify-center text-2xl font-display text-white mb-6"
-                  style={{ background: "var(--gradient-accent)" }}>
-                  {m.name.split(" ").map((n) => n[0]).join("")}
-                </div>
+                {m.photo ? (
+                  <img src={m.photo} alt={m.name} className="h-24 w-24 rounded-full object-cover mb-6 border-2 border-[var(--primary)]/40" />
+                ) : (
+                  <div className="h-20 w-20 rounded-full flex items-center justify-center text-2xl font-display text-white mb-6"
+                    style={{ background: "var(--gradient-accent)" }}>
+                    {m.name.split(" ").map((n) => n[0]).join("")}
+                  </div>
+                )}
                 <h3 className="text-2xl mb-1">{m.name}</h3>
                 <p className="text-[var(--primary)] text-sm uppercase tracking-wider mb-4">{m.role}</p>
                 <p className="text-muted-foreground leading-relaxed">{m.bio}</p>
