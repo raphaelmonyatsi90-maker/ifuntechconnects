@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-tech.jpg";
 import raphaelPhoto from "@/assets/raphael-monyatsi.jpeg.asset.json";
+import lesleyPhoto from "@/assets/lesley-seemola.jpeg.asset.json";
 import { Mail, MapPin, Clock, Phone, Bot, Cpu, Box, Code2, Brain, Sparkles, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +28,7 @@ const services = [
 
 const team = [
   { name: "Raphael Monyatsi", role: "CEO", bio: "Provides unwavering leadership and strategic direction, overseeing organizational growth and ensuring alignment with our mission and vision.", photo: raphaelPhoto.url },
-  { name: "Lesley Seemola", role: "CEO", bio: "Demonstrates remarkable leadership and a visionary approach, guiding the team towards strategic objectives and fostering innovation." },
+  { name: "Lesley Seemola", role: "Manager", bio: "Demonstrates remarkable leadership and a visionary approach, guiding the team towards strategic objectives and fostering innovation.", photo: lesleyPhoto.url },
 ];
 
 function Nav() {
